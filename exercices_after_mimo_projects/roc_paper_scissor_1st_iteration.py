@@ -3,11 +3,12 @@ import random
 player_wins = 0
 computer_wins = 0
 
+print("\nLet's play rock, paper, or scissors")
+
 while player_wins < 2 and computer_wins < 2:
 
     # Display the game instructions
-    print("\nLet's play rock, paper, or scissors")
-    player_choice = input("Choose rock, paper, or scissors: ").lower()
+    player_choice = input("\nChoose rock, paper, or scissors: ").lower()
 
     # Validate input
     if player_choice not in ["rock", "paper", "scissors"]:
@@ -40,10 +41,13 @@ while player_wins < 2 and computer_wins < 2:
         print("It's a tie")
 
     # Display the current score
-    print(f"Current Score - Player: {player_wins}, Computer: {computer_wins}")
+    print(
+        f"\nCurrent Score - Player: {player_wins}, Computer: {computer_wins}")
 
 # End of the game - announce the overall winner
 if player_wins > computer_wins:
     print("\nCongratulations! You won.")
+    print()
 else:
     print("\nComputer won!")
+    print()
