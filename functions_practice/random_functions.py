@@ -3,6 +3,7 @@
 # There are not a copy of what AI told me to do but original creation
 # I have some understanding on how a GUI work and try to adapt my code to it, e.g. english in all lower case to facilitate input understanding for the code
 
+
 # Calculation of two variables from two parameters
 def describe_rectangle(width, height):
     calculate_area = width * height
@@ -12,6 +13,7 @@ def describe_rectangle(width, height):
 
 # describe_rectangle(40, 50)
 
+
 # Calculate one variable from one parameter and a formulas
 
 
@@ -20,6 +22,7 @@ def convert_temperature(celsius):
     print(fahrenheit)
 
 # convert_temperature(1)
+
 
 # Advance model from previous exercise, using variable parameter
 # Calculates two variables, using parameters and formulas
