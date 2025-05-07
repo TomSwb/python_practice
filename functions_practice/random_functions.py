@@ -3,7 +3,6 @@
 # There are not a copy of what AI told me to do but original creation
 # I have some understanding on how a GUI work and try to adapt my code to it, e.g. english in all lower case to facilitate input understanding for the code
 
-
 # Calculation of two variables from two parameters
 def describe_rectangle(width, height):
     calculate_area = width * height
@@ -38,9 +37,8 @@ def convert_temperature_two_ways(value, scale="C"):
 
 # convert_temperature_two_ways(20, C)
 
+
 # Use a variable as parameter to define output based on conditions
-
-
 def greet_user(name, language="english"):
     if language == "english":
         print(f"Hello, {name}")
@@ -51,6 +49,5 @@ def greet_user(name, language="english"):
     else:
         print("Language not recognised - defaulting to English")
         print(f"Hi, {name}")
-
 
 # greet_user("Thomas", "english")
