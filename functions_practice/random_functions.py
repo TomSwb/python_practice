@@ -118,7 +118,6 @@ def weekly_meal_plan(days_for_plan=7):
         meal_plans.append(f"{day}: {meals_choice}")
 
     return meal_plans
-
-# Call the function
-plan = weekly_meal_plan()
-print(plan)
+    
+# plan = weekly_meal_plan()
+# print(plan)
