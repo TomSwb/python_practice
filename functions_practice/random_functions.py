@@ -54,3 +54,16 @@ def greet_user(name, language="english"):
         print(f"Hi, {name}")
 
 # greet_user("Thomas", "english")
+
+# Calclating discount based on original price
+
+
+def calculate_discount(price, discount, currency="$"):
+    if 0 <= discount <= 100:
+        final_price = price - (price * discount / 100)
+        return f"Original price: {currency}{price}, Discount: {discount}%, Final price: {currency}{final_price:.2f}"
+    else:
+        return "Error: Discount must be between 0 and 100."
+
+
+# print(calculate_discount(100, 20))
