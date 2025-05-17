@@ -29,13 +29,13 @@ class Library(Book): # class gathering books in a library (list)
 
     def display_books(self): # method to disply the book info if in list
         for book in self.books:
-        book.display_info()
+            book.display_info()
 
     def get_book_by_title(self, title): # method to only get books through their title
         for book in self.books:
-        if book.title.lower() == title.lower():
-            return book
-        return None
+            if book.title.lower() == title.lower():
+                return book
+            return None
 
 # books to enter in list using the class Book
 book1 = Book("Haunted by love", "Kamilah Schwab")
