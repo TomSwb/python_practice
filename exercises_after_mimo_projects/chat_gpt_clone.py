@@ -1,15 +1,21 @@
+from dotenv import load_dotenv
+load_dotenv()
 import requests
 import os
 
-api_key = os.getenv("???") # sets up API key, need to add your own openai key
-url = "???" # need to add the url needed
-headers = {"api-key": api_key}
+api_key = os.getenv("OPENAI_API_KEY") # sets up API key, need to add your own openai key
+url = "https://api.openai.com/v1/chat/completions" # need to add the url needed
+headers = {
+    "Authorization": f"Bearer {api_key}",
+    "Content-Type": "application/json"
+}
 
 # sets the back and force with the AI from your key
-def send_message(user_message, thread_id):
-    body = {"message": user_message}
-    if thread_id:
-        body["threadId"] = thread_id
+def send_message(user_message, thread_id=None):
+    body = {
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": user_message}]
+    }
     response = requests.post(url, headers=headers, json=body)
     return response.json()
 
@@ -31,17 +37,15 @@ while True:
     if user_message.lower() == "exit": # allow user to exit the loop
         break
     elif user_message.lower() == "new": # allow use to create new threads
-        current_thread_id = None
         print("A new thread began")
         continue
 
-    response_data = send_message(user_message, current_thread_id) # send message to AI
-
-    # gets the response from AI
-    latest_message = response_data.get("response")
-    current_thread_id = response_data.get("threadId")
-
-    # print AI response readibly
+    response_data = send_message(user_message)
+    # Parse the OpenAI response correctly:
+    try:
+        latest_message = response_data["choices"][0]["message"]["content"]
+    except Exception as e:
+        latest_message = f"Error: {response_data}"
     print(f"GPT: {latest_message}")
 
     # adds threads id to the list for tracking purposes
